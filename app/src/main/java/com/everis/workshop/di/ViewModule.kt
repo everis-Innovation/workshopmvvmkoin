@@ -8,5 +8,4 @@ import org.koin.dsl.module
 val viewModule = module {
     single { MainFragment() as MainView}
     single { MainActivity() }
-
 }

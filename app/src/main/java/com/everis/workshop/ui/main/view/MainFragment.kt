@@ -45,14 +45,14 @@ class MainFragment : MainView, BaseFragment(), GoogleApiClient.ConnectionCallbac
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProviders.of(this, MainViewModelImpl.FACTORY(
+       /* viewModel = ViewModelProviders.of(this, MainViewModelImpl.FACTORY(
             UserRepositoryImpl(
                 WsRequestUser(
                     ApiService.create())
             )
-        )).get(MainViewModelImpl::class.java)
+        )).get(MainViewModelImpl::class.java)*/
 
-      //  viewModel = getViewModel()
+       viewModel = getViewModel()
 
         activity?.let {activity ->
             googleApiClient = GoogleApiClient.Builder(activity)

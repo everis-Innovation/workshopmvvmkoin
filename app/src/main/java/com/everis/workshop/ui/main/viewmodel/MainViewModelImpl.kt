@@ -20,11 +20,10 @@ import com.everis.workshop.ui.main.router.MainRouter
 import com.everis.workshop.ui.main.router.MainRouterImpl
 import com.everis.workshop.ui.main.view.MainView
 import com.everis.workshop.utils.location.LocationUtils
-import com.everis.workshop.utils.viewmodel.singleArgViewModelFactory
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
 
-class MainViewModelImpl(
+class MainViewModelImpl(private val mainView: MainView,
                         private val remoteRepository: UserRepository) : MainViewModel, ViewModel() {
 
     override val user: LiveData<User> = remoteRepository.user
@@ -41,14 +40,14 @@ class MainViewModelImpl(
 
     private val TAG = "Location request"
 
-   // private val router: MainRouter by (mainView as Fragment).inject { parametersOf((mainView as Fragment).activity) }
+    private val router: MainRouter by (mainView as Fragment).inject()
 
-    companion object {
+   /* companion object {
         /**
          * Factory for creating [MainViewModel]
          */
         val FACTORY = singleArgViewModelFactory(::MainViewModelImpl)
-    }
+    }*/
 
     init {
         locationMutable.value = Location("0,0")
@@ -59,7 +58,7 @@ class MainViewModelImpl(
     }
 
     override fun buttonAction(activity: Activity, objectAction: Object) {
-        // router.goMapView(activity, objectAction as MapCoordinates)
+         router.goMapView(activity, objectAction as MapCoordinates)
     }
 
     override fun initCurrentPosition(activity: FragmentActivity) {
