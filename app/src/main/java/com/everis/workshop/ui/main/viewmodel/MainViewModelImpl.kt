@@ -29,7 +29,7 @@ class MainViewModelImpl(private val mainView: MainView,
     override val user: LiveData<User> = remoteRepository.user
     override val error: LiveData<String> = remoteRepository.error
 
-    private val locationMutable = MutableLiveData<Location>()
+    private val locationMutable:MutableLiveData<Location> = MutableLiveData<Location>()
     override val location: LiveData<Location> = locationMutable
 
     private val locationEnabledMutable = MutableLiveData<Boolean>()

@@ -7,7 +7,7 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
 import androidx.core.app.ActivityCompat
-import com.everis.workshop.data.network.entities.WsRequestUserProvider
+import com.everis.workshop.data.network.entities.UserDataSourceProvider
 import com.everis.workshop.data.network.model.Result
 import com.everis.workshop.ui.base.BaseContracts
 import com.everis.workshop.ui.base.BaseInteractor
@@ -38,7 +38,7 @@ class MainInteractor(output: BaseContracts.InteractorOutput?) : BaseInteractor(o
 
     fun getDataCallBack(onSuccess: (Result) -> Unit, onError: (Throwable?) -> Unit) {
 
-        val wsRequestUser = WsRequestUserProvider.provideRequestUser()
+        val wsRequestUser = UserDataSourceProvider.provideRequestUser()
         wsRequestUser.requestUser().enqueue(object : Callback<Result> {
             override fun onResponse(call: Call<Result>, response: Response<Result>) {
                 onSuccess(response.body()!!)

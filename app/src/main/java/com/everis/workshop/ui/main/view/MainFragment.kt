@@ -6,14 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.everis.workshop.ui.base.BaseFragment
 import com.everis.workshop.R
 import com.everis.workshop.data.model.map.MapCoordinates
-import com.everis.workshop.data.network.entities.WsRequestUser
-import com.everis.workshop.data.network.interfaces.ApiService
 import com.everis.workshop.data.network.model.User
-import com.everis.workshop.data.repository.UserRepositoryImpl
 import com.everis.workshop.ui.main.viewmodel.MainViewModelImpl
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
@@ -47,7 +43,7 @@ class MainFragment : MainView, BaseFragment(), GoogleApiClient.ConnectionCallbac
         super.onViewCreated(view, savedInstanceState)
        /* viewModel = ViewModelProviders.of(this, MainViewModelImpl.FACTORY(
             UserRepositoryImpl(
-                WsRequestUser(
+                UserDataSource(
                     ApiService.create())
             )
         )).get(MainViewModelImpl::class.java)*/
@@ -68,6 +64,7 @@ class MainFragment : MainView, BaseFragment(), GoogleApiClient.ConnectionCallbac
     }
 
     fun setupObservers() {
+
         viewModel.user.observe(viewLifecycleOwner, Observer {response ->
             closeLoadingDialog()
             user = response

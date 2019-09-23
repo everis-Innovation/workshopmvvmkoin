@@ -2,8 +2,8 @@ package com.everis.workshop.data.network.entities
 
 import com.everis.workshop.data.network.interfaces.ApiService
 
-object WsRequestUserProvider {
+object UserDataSourceProvider {
 
-    fun provideRequestUser(): WsRequestUser = WsRequestUser(ApiService.create())
+    fun provideRequestUser(): UserDataSource = UserDataSource(ApiService.create())
 
 }
