@@ -1,4 +1,4 @@
-package com.everis.workshop.data.network.model
+package com.everis.workshop.data.model.main
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,7 +1,7 @@
 package com.everis.workshop.data.network.entities
 
 import com.everis.workshop.data.network.interfaces.ApiInterface
-import com.everis.workshop.data.network.model.Result
+import com.everis.workshop.data.model.main.Result
 import retrofit2.Call
 
 class UserDataSource(private val apiService: ApiInterface) {

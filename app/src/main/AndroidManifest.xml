@@ -31,7 +31,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
 
         <service
-            android:name="com.everis.workshop.data.network.push.PushFirebaseMessagingService"
+            android:name="com.everis.workshop.data.push.PushFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

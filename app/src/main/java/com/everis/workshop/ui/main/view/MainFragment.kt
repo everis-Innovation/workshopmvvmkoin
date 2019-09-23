@@ -9,8 +9,10 @@ import androidx.lifecycle.Observer
 import com.everis.workshop.ui.base.BaseFragment
 import com.everis.workshop.R
 import com.everis.workshop.data.model.map.MapCoordinates
-import com.everis.workshop.data.network.model.User
+import com.everis.workshop.data.model.main.User
+import com.everis.workshop.data.model.network.ResponseCase
 import com.everis.workshop.ui.main.viewmodel.MainViewModelImpl
+import com.everis.workshop.utils.toast
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.location.LocationListener
@@ -100,6 +102,13 @@ class MainFragment : MainView, BaseFragment(), GoogleApiClient.ConnectionCallbac
                 false -> {
                     //TODO action disabled
                 }
+            }
+        })
+
+        viewModel.userResponseCase.observe(viewLifecycleOwner, Observer {
+            when(it) {
+                is ResponseCase.UserResponse -> {/*TODO Action*/ }
+                is ResponseCase.ErrorResponse -> {/*TODO Action*/ }
             }
         })
     }

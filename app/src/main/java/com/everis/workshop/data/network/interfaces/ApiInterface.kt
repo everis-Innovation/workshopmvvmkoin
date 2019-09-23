@@ -1,6 +1,6 @@
 package com.everis.workshop.data.network.interfaces
 
-import com.everis.workshop.data.network.model.Result
+import com.everis.workshop.data.model.main.Result
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers

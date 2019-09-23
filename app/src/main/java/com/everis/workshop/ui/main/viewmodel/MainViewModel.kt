@@ -4,10 +4,8 @@ import android.app.Activity
 import android.location.Location
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import com.everis.workshop.data.network.model.User
-import com.google.android.gms.common.api.GoogleApiClient
-import com.google.android.gms.location.LocationListener
+import com.everis.workshop.data.model.main.User
+import com.everis.workshop.data.model.network.ResponseCase
 
 interface MainViewModel {
 
@@ -16,6 +14,8 @@ interface MainViewModel {
     val location : LiveData<Location>
     val locationEnabled : LiveData<Boolean>
     val permissionGranted : LiveData<Boolean>
+
+    val userResponseCase: LiveData<ResponseCase>
 
     fun getUserData()
     fun buttonAction(activity: Activity, objectAction: Object)

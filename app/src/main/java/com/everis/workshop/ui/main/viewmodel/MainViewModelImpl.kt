@@ -1,27 +1,21 @@
 package com.everis.workshop.ui.main.viewmodel
 
-import android.Manifest
 import android.app.Activity
-import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
-import android.location.LocationManager
 import android.util.Log
-import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.everis.workshop.data.model.map.MapCoordinates
-import com.everis.workshop.data.network.model.User
+import com.everis.workshop.data.model.main.User
 import com.everis.workshop.data.repository.UserRepository
 import com.everis.workshop.ui.main.router.MainRouter
-import com.everis.workshop.ui.main.router.MainRouterImpl
 import com.everis.workshop.ui.main.view.MainView
 import com.everis.workshop.utils.location.LocationUtils
 import org.koin.android.ext.android.inject
-import org.koin.core.parameter.parametersOf
 
 class MainViewModelImpl(private val mainView: MainView,
                         private val remoteRepository: UserRepository) : MainViewModel, ViewModel() {
@@ -37,6 +31,8 @@ class MainViewModelImpl(private val mainView: MainView,
 
     private val permissionGrantedMutable = MutableLiveData<Boolean>()
     override val permissionGranted: LiveData<Boolean> = permissionGrantedMutable
+
+    override val userResponseCase = remoteRepository.userResponseCase
 
     private val TAG = "Location request"
 

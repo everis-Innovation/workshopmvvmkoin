@@ -8,7 +8,7 @@ import android.location.Location
 import android.location.LocationManager
 import androidx.core.app.ActivityCompat
 import com.everis.workshop.data.network.entities.UserDataSourceProvider
-import com.everis.workshop.data.network.model.Result
+import com.everis.workshop.data.model.main.Result
 import com.everis.workshop.ui.base.BaseContracts
 import com.everis.workshop.ui.base.BaseInteractor
 import com.google.android.gms.common.api.GoogleApiClient
@@ -20,6 +20,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+/**
+ * NO SE USA, PERTENECE A ARQUITECTURA VIPER, ESTÁ PARA VER DIFERENCIAS CON MVVM
+ */
 class MainInteractor(output: BaseContracts.InteractorOutput?) : BaseInteractor(output) {
 
     private lateinit var activity: Activity

@@ -1,4 +1,4 @@
-package com.everis.workshop.data.network.push
+package com.everis.workshop.data.push
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
