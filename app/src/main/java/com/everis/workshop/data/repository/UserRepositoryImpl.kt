@@ -1,6 +1,5 @@
 package com.everis.workshop.data.repository
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.everis.workshop.data.network.entities.UserDataSource
 import com.everis.workshop.data.model.main.Result
