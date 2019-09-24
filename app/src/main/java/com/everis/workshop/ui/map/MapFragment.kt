@@ -54,8 +54,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
         return inflater.inflate(R.layout.fragment_map, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         mapView.getMapAsync(this)
         mapView.run { onCreate(savedInstanceState) }
         searchTextListener()
