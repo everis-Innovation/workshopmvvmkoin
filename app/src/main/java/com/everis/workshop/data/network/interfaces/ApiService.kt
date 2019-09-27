@@ -1,5 +1,6 @@
 package com.everis.workshop.data.network.interfaces
 
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -15,6 +16,7 @@ interface ApiService {
             val retrofit = Retrofit.Builder().apply {
                 client(makeOkHttpClient())
                 baseUrl(URL_BASE)
+                addCallAdapterFactory(CoroutineCallAdapterFactory())
                 addConverterFactory(GsonConverterFactory.create())
             }
                 .build()

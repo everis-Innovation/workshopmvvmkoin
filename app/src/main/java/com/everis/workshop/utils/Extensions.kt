@@ -6,8 +6,11 @@ import android.location.Location
 import android.location.LocationManager
 import android.widget.Toast
 
-fun Context.toast(message: CharSequence, duration: Int = Toast.LENGTH_LONG) {
-    Toast.makeText(this, message, duration).show()
+fun Context.toast(message: CharSequence) {
+    Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+}
+fun Context.logging(message: CharSequence) {
+    Toast.makeText(this, message, Toast.LENGTH_LONG).show()
 }
 
 fun Location.isLocationEnabled(activity: Activity): Boolean {

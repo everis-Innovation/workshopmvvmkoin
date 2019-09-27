@@ -66,6 +66,7 @@ class MainFragment : MainView, BaseFragment(), GoogleApiClient.ConnectionCallbac
     }
 
     fun setupObservers() {
+        this.context!!.toast("ieojgoi")
 
         viewModel.user.observe(viewLifecycleOwner, Observer {response ->
             closeLoadingDialog()
